@@ -206,25 +206,27 @@ html:not([data-show-draft="true"]) [data-draft-only] { display: none !important;
   padding: clamp(56px, 6vw, 96px) var(--gutter);
   min-height: calc(100dvh - var(--nav-h) - 180px);
 }
-.biz--light { background: var(--paper); color: var(--ink); }
+.biz--red { background: var(--red); color: var(--paper); }
 .biz--dark { background: var(--ink-deep); color: var(--paper); }
+/* 白文字×赤地は3.72:1。大きい文字（太字19px以上）の基準3:1を満たすよう、カード内の文字はすべて太字19px以上にする */
+.biz .btn { font-size: 19px; color: var(--paper); }
+.biz--red .btn { background: var(--ink); }
+.biz--dark .draft-note { color: var(--paper); }
 .biz__logo { height: 120px; display: flex; align-items: flex-end; }
 .biz__logo img { width: auto; }
-.biz--light .biz__logo img { height: 52px; }
+.biz--red .biz__logo img { height: 52px; }
 .biz--dark .biz__logo img { height: 112px; }
-.biz__lines { display: grid; gap: 6px; font-size: clamp(17px, 1.45vw, 21px); line-height: 1.8; font-weight: 500; }
-.biz__lines p:first-child { font-weight: 700; }
+.biz__lines { display: grid; gap: 8px; font-size: clamp(19px, 1.55vw, 22px); line-height: 1.7; font-weight: 700; font-feature-settings: "palt";  justify-self: stretch; min-width: 0; overflow-wrap: anywhere; }
 .biz__note { margin-top: 6px; }
 
 @media (max-width: 767px) {
   .business__pair { grid-template-columns: 1fr; }
   .biz { min-height: 0; gap: 32px; padding-block: 64px; }
-  .biz__lines { font-size: 16px; }
+  .biz__lines { letter-spacing: -.03em; }
   .biz__logo { height: auto; }
-  .biz--light { padding-top: 8px; }
-  .biz--light .biz__logo img { height: 40px; }
+  .biz--red .biz__logo img { height: 40px; }
   .biz--dark .biz__logo img { height: 88px; }
-  .biz .btn { width: 100%; justify-content: space-between; }
+  .biz .btn { width: 100%; justify-content: space-between; padding-inline: 20px; letter-spacing: 0; white-space: normal; }
 }
 
 /* Works */
@@ -375,8 +377,8 @@ select.input {
       <h2 class="section-title" id="business-title">事業領域</h2>
     </div>
     <div class="business__pair">
-      <article class="biz biz--light" aria-labelledby="biz-apush">
-        <h3 class="biz__logo" id="biz-apush"><img src="assets/apush-logo.png" alt="A-PUSH" width="862" height="186"></h3>
+      <article class="biz biz--red on-dark" aria-labelledby="biz-apush">
+        <h3 class="biz__logo" id="biz-apush"><img src="assets/apush-logo-white.png" alt="A-PUSH" width="862" height="186"></h3>
         <div class="biz__lines">
           <p>アウトプットが足りてない、日本の英語教育を補う。</p>
           <p>スピーキング特化型英会話コーチング。</p>
