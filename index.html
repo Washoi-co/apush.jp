@@ -69,7 +69,6 @@ document.documentElement.dataset.showDraft = String(CONFIG.SHOW_DRAFT);
   --muted-large: #787774;  /* 24px以上と飾りだけ */
   --muted-on-mist: #5F5E5B; /* 薄い灰の地の上の灰（#6B6A67 は 4.4996:1 で基準未満のため） */
   --muted-dark: #A3A29E;   /* 黒地の本文の灰 */
-  --panel-dark: #262626;   /* 黒地の上の未確定枠 */
   --error: #C4200C;        /* エラー文字（赤系、白地・薄い灰の地で4.5:1以上） */
   --font-futura: "Jost", "Futura", "Century Gothic", sans-serif; /* Oto Furari のロゴ文字 */
   --font-latin: "Archivo", "Helvetica Neue", Arial, sans-serif;
@@ -349,7 +348,7 @@ select.input {
 .footer__brand { display: grid; gap: 18px; justify-items: start; position: relative; }
 .footer__brand img { width: 180px; }
 .footer__name { font-weight: 700; font-size: 18px; }
-.footer__addr .ph { background: var(--panel-dark); color: var(--muted-dark); display: inline-flex; padding: 10px 14px; }
+.footer__addr { color: var(--muted-dark); font-size: 15px; line-height: 1.7; }
 .footer__links { display: flex; flex-wrap: wrap; gap: 8px 32px; list-style: none; padding: 0; margin: 0; position: relative; font-size: 15px; }
 .footer__links a { text-underline-offset: 4px; }
 .footer__copy { color: var(--muted-dark); font-size: 13px; font-family: var(--font-latin); position: relative; }
@@ -424,11 +423,11 @@ select.input {
   <section class="works" id="works" aria-labelledby="works-title">
     <h2 class="section-title section-title--latin reveal" id="works-title">Works</h2>
 
-    <!-- 3-1. 音ふらり × Nouei（内容は otofurari.apush.jp から。開催後は画像を当日の写真に差し替える） -->
+    <!-- 3-1. 音ふらり × NOUEI（内容は otofurari.apush.jp から。開催後は画像を当日の写真に差し替える） -->
     <article class="feature reveal" aria-labelledby="work-nouei">
       <img class="feature__photo" src="assets/works-nouei.jpg" alt="Oto Furari × NOUEI 10.24（Sat）Shimokitazawa／下北沢" width="900" height="900" loading="lazy">
       <div class="feature__body">
-        <p class="feature__label">音ふらり × Nouei</p>
+        <p class="feature__label">音ふらり × NOUEI</p>
         <h3 class="feature__title" id="work-nouei"><span class="nw">「音と野菜で</span><span class="nw">繋がる国際交流会」</span></h3>
         <p class="work__text">Oto Furariを通じて、<br>NOUEIのレアベジに出会う。</p>
         <dl class="meta">
@@ -531,7 +530,7 @@ select.input {
   <div class="footer__brand">
     <img src="assets/apush-logo.png" alt="A-Push" width="862" height="186" loading="lazy">
     <p class="footer__name">A-PUSH株式会社</p>
-    <p class="footer__addr" data-draft="empty"><span class="ph">ここに入れる：所在地</span></p>
+    <p class="footer__addr">〒141-0021 東京都品川区上大崎二丁目15番19号 6階621号室</p>
   </div>
   <ul class="footer__links">
     <li><a href="https://lp.apush.jp/company.html" data-config-href="COMPANY_URL" target="_blank" rel="noopener">会社概要</a></li>
