@@ -198,35 +198,34 @@ html:not([data-show-draft="true"]) [data-draft-only] { display: none !important;
 .section-title--latin { font-family: var(--font-latin); font-weight: 900; font-size: clamp(56px, 8vw, 120px); line-height: 1; letter-spacing: -.02em; }
 
 /* 事業領域：白と黒の対 */
-.business { padding-top: var(--section-y); }
-.business__head { padding: 0 var(--gutter) clamp(40px, 5vw, 64px); }
-.business__pair { display: grid; grid-template-columns: 1fr 1fr; }
+.business { padding: var(--section-y) var(--gutter) 0; }
+.business__head { padding-bottom: clamp(40px, 5vw, 64px); }
+/* 2枚のカード：薄い灰（A-PUSH）と黒（音ふらり）の対。ロゴ・文章・ボタンの位置を2枚で揃える */
+.business__pair { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(16px, 2vw, 28px); }
 .biz {
-  display: grid; align-content: start; gap: 40px; justify-items: start;
-  padding: clamp(56px, 6vw, 96px) var(--gutter);
-  min-height: calc(100dvh - var(--nav-h) - 180px);
+  display: grid; grid-template-rows: auto 1fr auto; gap: 40px; justify-items: start;
+  padding: clamp(40px, 4.5vw, 72px);
+  min-height: clamp(480px, 40vw, 600px);
+  min-width: 0;
 }
-.biz--red { background: var(--red); color: var(--paper); }
+.biz--light { background: var(--mist); color: var(--ink); }
 .biz--dark { background: var(--ink-deep); color: var(--paper); }
-/* 白文字×赤地は3.72:1。大きい文字（太字19px以上）の基準3:1を満たすよう、カード内の文字はすべて太字19px以上にする */
-.biz .btn { font-size: 19px; color: var(--paper); }
-.biz--red .btn { background: var(--ink); }
-.biz--dark .draft-note { color: var(--paper); }
-.biz__logo { height: 120px; display: flex; align-items: flex-end; }
+.biz__logo { height: 112px; display: flex; align-items: flex-end; }
 .biz__logo img { width: auto; }
-.biz--red .biz__logo img { height: 52px; }
-.biz--dark .biz__logo img { height: 112px; }
-.biz__lines { display: grid; gap: 8px; font-size: clamp(19px, 1.55vw, 22px); line-height: 1.7; font-weight: 700; font-feature-settings: "palt";  justify-self: stretch; min-width: 0; overflow-wrap: anywhere; }
+.biz--light .biz__logo img { height: 48px; }
+.biz--dark .biz__logo img { height: 104px; }
+.biz__lines { display: grid; gap: 6px; align-content: start; font-size: clamp(17px, 1.35vw, 20px); line-height: 1.8; font-weight: 500; justify-self: stretch; min-width: 0; }
+.biz__lines p:first-child { font-weight: 700; }
 .biz__note { margin-top: 6px; }
 
 @media (max-width: 767px) {
   .business__pair { grid-template-columns: 1fr; }
-  .biz { min-height: 0; gap: 32px; padding-block: 64px; }
-  .biz__lines { letter-spacing: -.03em; }
+  .biz { min-height: 0; gap: 28px; padding: 36px 24px; }
   .biz__logo { height: auto; }
-  .biz--red .biz__logo img { height: 40px; }
-  .biz--dark .biz__logo img { height: 88px; }
-  .biz .btn { width: 100%; justify-content: space-between; padding-inline: 20px; letter-spacing: 0; white-space: normal; }
+  .biz--light .biz__logo img { height: 38px; }
+  .biz--dark .biz__logo img { height: 80px; }
+  .biz__lines { font-size: 16px; }
+  .biz .btn { width: 100%; justify-content: space-between; padding-inline: 20px; }
 }
 
 /* Works */
@@ -377,8 +376,8 @@ select.input {
       <h2 class="section-title" id="business-title">事業領域</h2>
     </div>
     <div class="business__pair">
-      <article class="biz biz--red on-dark" aria-labelledby="biz-apush">
-        <h3 class="biz__logo" id="biz-apush"><img src="assets/apush-logo-white.png" alt="A-PUSH" width="862" height="186"></h3>
+      <article class="biz biz--light" aria-labelledby="biz-apush">
+        <h3 class="biz__logo" id="biz-apush"><img src="assets/apush-logo.png" alt="A-PUSH" width="862" height="186"></h3>
         <div class="biz__lines">
           <p>アウトプットが足りてない、日本の英語教育を補う。</p>
           <p>スピーキング特化型英会話コーチング。</p>
