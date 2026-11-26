@@ -4,6 +4,7 @@
 --fd:"Zen Kaku Gothic New",-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",system-ui,sans-serif;
 --en:"Archivo","Zen Kaku Gothic New",-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP",system-ui,sans-serif;color-scheme:light}
 *,*::before,*::after{box-sizing:border-box}
+a{color:inherit}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--fd);-webkit-font-smoothing:antialiased}
 .top{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:960px;margin:0 auto;padding:20px 16px}
 .top img{height:30px;width:auto;display:block}
